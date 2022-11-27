@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  final String titulo;
+  final String title;
 
-  const Logo({Key? key, required this.titulo}) : super(key: key);
+  const Logo({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,12 @@ class Logo extends StatelessWidget {
       width: 170,
       margin: const EdgeInsets.only(top: 50),
       child: Column(
-        children: const <Widget>[
-          Image(image: AssetImage('assets/tag-logo.png')),
-          SizedBox(height: 20),
+        children: <Widget>[
+          const Image(image: AssetImage('assets/tag-logo.png')),
+          const SizedBox(height: 20),
           Text(
-            'Messenger',
-            style: TextStyle(fontSize: 30),
+            title,
+            style: const TextStyle(fontSize: 30),
           )
         ],
       ),

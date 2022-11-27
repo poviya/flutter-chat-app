@@ -1,6 +1,8 @@
 // ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:chat_app/widgets/custom_input.dart';
+import 'package:chat_app/widgets/labels.dart';
+import 'package:chat_app/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -18,9 +20,13 @@ class RegisterPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                const _Logo(),
+                const Logo(title: 'Registrate'),
                 _Form(),
-                _Labels(),
+                const Labels(
+                  ruta: 'login',
+                  title: 'Ya tienes cuenta?',
+                  subTitle: 'Ingresa ahora',
+                ),
                 const Text(
                   'Términos y condiciones de uso',
                   style: TextStyle(fontWeight: FontWeight.w200),
@@ -90,57 +96,6 @@ class __FormState extends State<_Form> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _Logo extends StatelessWidget {
-  const _Logo({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-      width: 170,
-      margin: const EdgeInsets.only(top: 50),
-      child: Column(
-        children: const <Widget>[
-          Image(image: AssetImage('assets/tag-logo.png')),
-          SizedBox(height: 20),
-          Text(
-            'Registrate',
-            style: TextStyle(fontSize: 30),
-          )
-        ],
-      ),
-    ));
-  }
-}
-
-class _Labels extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const Text(
-          "Ya tienes cuenta?",
-          style: TextStyle(
-              color: Colors.black54, fontSize: 15, fontWeight: FontWeight.w300),
-        ),
-        const SizedBox(height: 10),
-        GestureDetector(
-          child: Text(
-            "Ingresa ahora",
-            style: TextStyle(
-                color: Colors.blue[600],
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
-          ),
-          onTap: () {
-            Navigator.pushReplacementNamed(context, 'login');
-          },
-        ),
-      ],
     );
   }
 }

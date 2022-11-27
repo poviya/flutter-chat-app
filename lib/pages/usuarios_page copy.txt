@@ -10,7 +10,6 @@ class UsuariosPage extends StatefulWidget {
 }
 
 class _UsuariosPageState extends State<UsuariosPage> {
-  // ignore: prefer_final_fields
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
